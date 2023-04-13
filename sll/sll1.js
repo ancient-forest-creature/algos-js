@@ -35,8 +35,8 @@ class LinkedList {
         let runner=this.head;
         let result = "";
         while(runner !== null){
-            runner === this.head ?result = runner.data
-            :result += `,${runner.data}`;
+            runner === this.head ? result = runner.data
+            : result += `,${runner.data}`;
             runner = runner.next;
         }
         return result;
