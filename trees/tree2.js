@@ -52,20 +52,6 @@ class BST {
             }
             else { return "The subtrees are not balanced"}
         }
-        // print out the contents of the tree to verify you are doing things correctly
-        xRay() {
-            if (this.root === null) {
-                return `this tree doesn't have a root`;
-            }
-            let leftSide = xrayHelp(this.root.left)
-            let rightSide = xrayHelp(this.root.right)
-            function xrayHelp(runner) {
-                if(!runner) {
-                    return 0;
-                }
-                return 1 + xrayHelp(runner.left) + xrayHelp(runner.right)
-            }
-        }
 }
 
 // takes an ascending ordered array and returns a balanced BST from it
@@ -83,12 +69,25 @@ function arrayToBST(arr) {
 }
 
 // testing arrayToBST
-hold = [1,2,3,4,5,6,7,8,9];
-// hold = [1,2,3,4,5,6,7,8,9,10];
+// hold = [1,2,3,4,5,6,7,8,9];
+hold = [1,2,3,4,5,6,7,8,9,10];
 test = arrayToBST(hold);
 console.log(test.isBalanced())
 
-// closest common ancestor - find the closest common ancestor in a tree for two given values.
+// closest common ancestor - find the closest common ancestor in a tree for two contained values.
 function cCA(BST, x, y) {
+    if(x > y){
+        larger = x;
+        smaller = y;
+    }
+    else{
+        larger = y;
+        smaller =x;
+    }
+    if(smaller < BST.root && larger > BST.root){
+        return BST.root;
+    }
+    runner = BST.root;
+    // while(runner )
 
 }
